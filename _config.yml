@@ -18,7 +18,7 @@ minimal_mistakes_skin2: "neon"
 # Site Settings
 locale                   : "en-GB"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Sidak Plaha"
+title                    : "Sidak"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Sidak Plaha"
