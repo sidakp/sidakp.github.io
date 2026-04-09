@@ -1,0 +1,26 @@
+- group: Engineering & Simulation
+  items:
+    - CAD
+    - CFD
+    - FEA (ANSYS)
+    - CES EduPack
+    - Wind-tunnel testing
+    - Material selection
+
+- group: Composites Manufacturing
+  items:
+    - Resin infusion
+    - Wet-layup
+    - Carbon-fibre bodywork
+    - Bill-of-materials authoring (CBOM)
+
+- group: Programming & Tools
+  items:
+    - Python
+    - Git
+    - MS Office
+
+- group: Standards & Regulations
+  items:
+    - IMechE Formula Student rules
+    - FIA regulations

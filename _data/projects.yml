@@ -1,0 +1,13 @@
+- title: Active Space Debris Removal via J2 Differential Precession
+  type: Independent Research
+  start: Sept 2025
+  end: Present
+  tags: [Python, Orbital Mechanics, Git]
+  link: https://github.com/sidakp
+  link_label: View on GitHub
+  description: >-
+    Independently developing a J2 precession orbital transfer strategy in Python
+    as part of a multi-researcher active debris removal mission. Simulations
+    demonstrate an 86% reduction in fuel consumption compared to direct
+    impulsive manoeuvres, by passively exploiting Earth's oblateness to align a
+    chaser spacecraft with debris targets.

@@ -1,0 +1,30 @@
+# Site
+title: Sidak Plaha
+tagline: MEng Aerospace Engineering — Queen Mary University of London
+description: >-
+  Personal site of Sidak Plaha, MEng Aerospace Engineering student at Queen Mary
+  University of London. Composites, CFD/FEA, and orbital mechanics.
+author: Sidak Plaha
+email: sidakplaha1164@gmail.com
+url: "https://sidakp.github.io"
+baseurl: ""
+
+# Social
+github_username: sidakp
+linkedin_url: "https://www.linkedin.com/in/sidak-plaha-6a4011278/"
+
+# Build
+theme: minima
+markdown: kramdown
+permalink: pretty
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - .jekyll-cache
