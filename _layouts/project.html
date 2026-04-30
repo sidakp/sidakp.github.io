@@ -21,7 +21,6 @@ layout: default
   {% if page.hero_image %}
   <figure class="project-hero-img project-hero-img--photo reveal">
     <img src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_image_alt | default: page.title | escape }}">
-    <div class="corners"></div>
     {% if page.hero_caption %}<figcaption class="project-hero-img__caption">{{ page.hero_caption }}</figcaption>{% endif %}
   </figure>
   {% elsif page.hero_placeholder %}
