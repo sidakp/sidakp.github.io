@@ -5,7 +5,7 @@ description: Two-year composites programme for Queen Mary Formula Student.
 order: 1
 number: "01"
 short_title: Composites
-title_html: "Carbon-fibre <em>aerodynamic bodywork</em>."
+title_html: "Carbon fibre <em>aerodynamic bodywork</em>."
 title_single_line: true
 card_title: "Carbon-fibre aerodynamic <em>bodywork</em>"
 card_desc: "Led end-to-end design & manufacture of the QMFS car's composite bodywork. Resin infusion vs wet-layup trade study cut 18% off bodywork mass."
@@ -13,7 +13,7 @@ list_title: "Carbon-fibre <em>bodywork</em>"
 list_desc: "Led end-to-end design & manufacture of the QMFS car's composite bodywork. 18% mass reduction vs. glass composite baseline."
 tags_line: "Composites · CFD · FEA"
 years: "2023 — Present"
-lead: "A two-year programme designing, manufacturing and validating the Queen Mary Formula Student car's composite bodywork — from fabric selection through resin infusion to Silverstone scrutineering."
+lead: "Designing, manufacturing and validating the Queen Mary Formula Student car's composite bodywork. From fabric selection through resin infusion to Silverstone scrutineering."
 meta:
   - label: Role
     value: Senior Composites Design Engineer
@@ -21,7 +21,7 @@ meta:
     value: Queen Mary Formula Student
   - label: Dates
     value: "Sept 2023 — Present"
-  - label: Stack
+  - label: Software
     value: "CAD · CFD · FEA · CES EduPack"
 hero_image: "/assets/images/qmfs-car-bodywork.jpg"
 hero_image_alt: "Queen Mary Formula Student car with carbon-fibre bodywork at competition."
