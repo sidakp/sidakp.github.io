@@ -22,8 +22,9 @@ meta:
     value: "Sept 2023 — Present"
   - label: Stack
     value: "CAD · CFD · FEA · CES EduPack"
-hero_placeholder: "PLACEHOLDER · SWAP FOR HERO SHOT"
-hero_caption: "qmfs-car-bodywork.jpg — 16:9 wide"
+hero_image: "/assets/images/qmfs-car-bodywork.jpg"
+hero_image_alt: "Queen Mary Formula Student car with carbon-fibre bodywork at competition."
+hero_caption: "Queen Mary Formula Student car at Silverstone."
 next:
   label: "Next project · 02 / 04"
   url: "/projects/j2-debris/"

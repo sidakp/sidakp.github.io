@@ -342,11 +342,23 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   overflow: hidden;
 }
+.project-hero-img--photo {
+  background: var(--ink);
+}
+.project-hero-img--photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 .project-hero-img::before {
   content: "";
   position: absolute; inset: 0;
   background-image: repeating-linear-gradient(45deg, var(--paper-3) 0, var(--paper-3) 1px, transparent 1px, transparent 14px);
   opacity: 0.6;
+}
+.project-hero-img--photo::before {
+  display: none;
 }
 .project-hero-img .corners { position: absolute; inset: 0; pointer-events: none; }
 .project-hero-img .corners::before,
