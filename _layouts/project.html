@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<section class="project-header wrap">
+  <div class="project-breadcrumb reveal">
+    <a href="{{ '/' | relative_url }}">Index</a><span class="sep">/</span>
+    <a href="{{ '/work/' | relative_url }}">Work</a><span class="sep">/</span>
+    <span>{{ page.number }} · {{ page.short_title }}</span>
+  </div>
+  <h1 class="project-title reveal delay-1">{{ page.title_html }}</h1>
+  {% if page.lead %}<p class="lead reveal delay-2">{{ page.lead }}</p>{% endif %}
+
+  {% if page.meta %}
+  <div class="project-meta reveal delay-3">
+    {% for m in page.meta %}
+    <div><span>{{ m.label }}</span><span>{{ m.value }}</span></div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.hero_placeholder %}
+  <div class="project-hero-img reveal">
+    <div class="corners"></div>
+    <div class="project-hero-img__label">{{ page.hero_placeholder }}</div>
+    {% if page.hero_caption %}<div class="project-hero-img__caption">{{ page.hero_caption }}</div>{% endif %}
+  </div>
+  {% endif %}
+</section>
+
+<section class="project-body wrap">
+  {{ content }}
+
+  {% if page.next %}
+  <a class="next-project" href="{{ page.next.url | relative_url }}">
+    <div class="next-project__row">
+      <div>
+        <div class="next-project__label">{{ page.next.label | default: "Next project" }}</div>
+        <h3 class="next-project__title">{{ page.next.title_html }}</h3>
+      </div>
+      <div class="next-project__arrow">→</div>
+    </div>
+  </a>
+  {% endif %}
+</section>

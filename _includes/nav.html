@@ -1,22 +1,12 @@
+{%- assign path = page.url -%}
 <header class="site-header">
-  <nav class="nav container">
-    <a class="nav__brand" href="{{ '/' | relative_url }}">Sidak Plaha</a>
-
-    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <ul class="nav__links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li>
-        <a class="nav__cv" href="{{ '/assets/cv/Sidak-Plaha-CV.pdf' | relative_url }}" download>
-          Download CV
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <div class="wrap site-header__row">
+    <a href="{{ '/' | relative_url }}" class="brand">Sidak <em>Plaha</em></a>
+    <nav class="nav">
+      <a href="{{ '/' | relative_url }}"{% if path == "/" %} class="is-active"{% endif %}>Index</a>
+      <a href="{{ '/work/' | relative_url }}"{% if path contains "/work" or path contains "/projects/" %} class="is-active"{% endif %}>Work</a>
+      <a href="{{ '/about/' | relative_url }}"{% if path contains "/about" %} class="is-active"{% endif %}>About</a>
+      <a href="mailto:{{ site.email }}">Contact</a>
+    </nav>
+  </div>
 </header>

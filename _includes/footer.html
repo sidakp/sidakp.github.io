@@ -1,22 +1,16 @@
 <footer class="site-footer">
-  <div class="container footer__inner">
-    <p class="footer__copy">&copy; {{ 'now' | date: "%Y" }} {{ site.author }}</p>
-    <ul class="footer__links">
-      <li>
-        <a href="mailto:{{ site.email }}" aria-label="Email">
-          Email
-        </a>
-      </li>
-      <li>
-        <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener" aria-label="LinkedIn">
-          LinkedIn
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" aria-label="GitHub">
-          GitHub
-        </a>
-      </li>
-    </ul>
+  <div class="wrap">
+    <p class="site-footer__big reveal">Let's <em>build</em> something.</p>
+    <div class="site-footer__row">
+      <div>
+        <div>SIDAK PLAHA · LONDON · {{ 'now' | date: "%Y" }}</div>
+        <div style="margin-top:.3rem">MEng Aerospace Engineering · Queen Mary University of London</div>
+      </div>
+      <ul>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }} ↗</a></li>
+        <li><a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        <li><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+    </div>
   </div>
 </footer>

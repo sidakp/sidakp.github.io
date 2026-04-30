@@ -11,9 +11,8 @@ group :jekyll_plugins do
   gem "jekyll-seo-tag"
 end
 
-# Windows / JRuby compatibility — harmless on macOS
+# Windows / JRuby compatibility
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "wdm", "~> 0.1.1", platforms: [:mingw, :mswin, :x64_mingw]
 
 # Lock http_parser.rb for JRuby
 gem "http_parser.rb", "~> 0.6.0", platforms: [:jruby]

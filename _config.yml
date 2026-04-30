@@ -14,9 +14,21 @@ github_username: sidakp
 linkedin_url: "https://www.linkedin.com/in/sidak-plaha-6a4011278/"
 
 # Build
-theme: minima
 markdown: kramdown
 permalink: pretty
+
+# Collections — one file per project under _projects/
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
 plugins:
   - jekyll-feed
@@ -28,3 +40,4 @@ exclude:
   - vendor
   - README.md
   - .jekyll-cache
+  - preview

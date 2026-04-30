@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Sidak Plaha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .index-head { padding: 4rem 0 3rem; border-bottom: 1px solid var(--ink); }
+  .index-head h1 { font-family: var(--f-display); font-size: clamp(3rem, 8vw, 6.5rem); line-height: 0.98; font-weight: 400; letter-spacing: -0.02em; margin: 0.8rem 0 1.5rem; }
+  .index-head h1 em { color: var(--accent-ink); }
+
+  .p-list { display: grid; }
+  .p-row {
+    display: grid;
+    grid-template-columns: 80px 1.3fr 1fr 160px 40px;
+    gap: 2rem;
+    padding: 3rem 0;
+    align-items: start;
+    border-bottom: 1px solid var(--rule);
+    transition: padding .3s;
+    cursor: pointer;
+  }
+  .p-row:hover { padding-left: 1.5rem; padding-right: 1.5rem; background: var(--paper-2); }
+  .p-row:hover .p-arrow { transform: translateX(6px); color: var(--accent-ink); }
+  .p-num { font-family: var(--f-mono); font-size: 0.78rem; letter-spacing: 0.1em; color: var(--ink-3); }
+  .p-title {
+    font-family: var(--f-display);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    margin: 0 0 0.4rem;
+  }
+  .p-title em { color: var(--accent-ink); }
+  .p-tags { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); }
+  .p-desc { font-family: var(--f-body); color: var(--ink-2); line-height: 1.5; font-size: 1rem; }
+  .p-year { font-family: var(--f-mono); font-size: 0.82rem; color: var(--ink-2); text-align: right; }
+  .p-arrow { font-family: var(--f-body); font-size: 1.6rem; color: var(--ink-3); transition: transform .3s, color .3s; justify-self: end; }
+
+  @media (max-width: 900px) {
+    .p-row { grid-template-columns: 50px 1fr 30px; }
+    .p-desc, .p-tags, .p-year { grid-column: 2; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <section class="index-head wrap">
+    <p class="eyebrow reveal"><span class="dot"></span>Four projects · 2022 — 2026</p>
+    <h1 class="reveal delay-1">A decade in, a <em>practice</em> forming.</h1>
+    <p class="lead reveal delay-2">
+      Composites, orbital mechanics, academic research, and the tutoring
+      practice that runs quietly in parallel. Pick one.
+    </p>
+  </section>
+
+  <section class="wrap">
+    <div class="p-list">
+      <a class="p-row reveal" href="project-composites.html">
+        <div class="p-num">01 / 04</div>
+        <div>
+          <h3 class="p-title">Carbon-fibre <em>bodywork</em></h3>
+          <div class="p-tags">QMFS · Resin Infusion · FEA</div>
+        </div>
+        <div class="p-desc">Led end-to-end design &amp; manufacture of the QMFS car's composite bodywork. 18% mass reduction vs. glass composite baseline.</div>
+        <div class="p-year">2023 — PRESENT</div>
+        <div class="p-arrow">→</div>
+      </a>
+
+      <a class="p-row reveal delay-1" href="project-j2.html">
+        <div class="p-num">02 / 04</div>
+        <div>
+          <h3 class="p-title"><em>J2</em> debris removal</h3>
+          <div class="p-tags">Python · Orbital Mechanics</div>
+        </div>
+        <div class="p-desc">Independent research on passive orbital-plane alignment for a debris chaser — 86% ΔV reduction vs. impulsive baseline.</div>
+        <div class="p-year">2025 — PRESENT</div>
+        <div class="p-arrow">→</div>
+      </a>
+
+      <a class="p-row reveal delay-2" href="project-academic.html">
+        <div class="p-num">03 / 04</div>
+        <div>
+          <h3 class="p-title">Inside the <em>degree</em></h3>
+          <div class="p-tags">Mercedes F1 · Wind Tunnel</div>
+        </div>
+        <div class="p-desc">Camshaft-bearing material selection under FIA rules, and a wind-tunnel aerofoil study across subsonic and supersonic regimes.</div>
+        <div class="p-year">2023 — 2025</div>
+        <div class="p-arrow">→</div>
+      </a>
+
+      <a class="p-row reveal delay-3" href="project-tutoring.html">
+        <div class="p-num">04 / 04</div>
+        <div>
+          <h3 class="p-title">A <em>quiet</em> tutoring practice</h3>
+          <div class="p-tags">11+ · GCSE · A-Level · IB</div>
+        </div>
+        <div class="p-desc">Three years of self-run one-to-one tuition in maths &amp; science, with a specialism in selective grammar-school preparation.</div>
+        <div class="p-year">2022 — PRESENT</div>
+        <div class="p-arrow">→</div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<script src="shared.js"></script>
+<script src="partials.js"></script>
+</body>
+</html>
