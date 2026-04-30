@@ -7,7 +7,7 @@ layout: default
     <a href="{{ '/work/' | relative_url }}">Work</a><span class="sep">/</span>
     <span>{{ page.number }} · {{ page.short_title }}</span>
   </div>
-  <h1 class="project-title reveal delay-1">{{ page.title_html }}</h1>
+  <h1 class="project-title{% if page.title_single_line %} project-title--single-line{% endif %} reveal delay-1">{{ page.title_html }}</h1>
   {% if page.lead %}<p class="lead reveal delay-2">{{ page.lead }}</p>{% endif %}
 
   {% if page.meta %}
