@@ -1,3 +1,23 @@
+// Dark/light mode toggle — defaults to dark
+(function () {
+  var btn = document.getElementById('themeToggle');
+  if (btn) {
+    function isLight() { return document.documentElement.getAttribute('data-mode') === 'light'; }
+    function updateBtn() { btn.textContent = isLight() ? '◑ Dark' : '☀ Light'; }
+    updateBtn();
+    btn.addEventListener('click', function () {
+      if (isLight()) {
+        document.documentElement.removeAttribute('data-mode');
+        localStorage.removeItem('nintendo-theme');
+      } else {
+        document.documentElement.setAttribute('data-mode', 'light');
+        localStorage.setItem('nintendo-theme', 'light');
+      }
+      updateBtn();
+    });
+  }
+})();
+
 // Reveal on scroll + light interactions
 (function () {
   var io = new IntersectionObserver(function (entries) {
