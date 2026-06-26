@@ -26,9 +26,9 @@
       font-display: swap;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: #000; }
     body {
-      background: #0b0b0b;
+      background: #000;
       color: #eae8e3;
       font-family: 'Erode', Georgia, serif;
       -webkit-font-smoothing: antialiased;
@@ -44,11 +44,8 @@
   </style>
 </helmet>
 
-<!-- Ambient cursor glow -->
-<div ref="{{ orbRef }}" style="position: fixed; top: 35%; left: 65%; width: 800px; height: 800px; pointer-events: none; z-index: 0; border-radius: 50%; background: radial-gradient(circle, rgba(195, 149, 91, 0.036) 0%, transparent 62%); transform: translate(-50%, -50%); will-change: top, left; transition: top 1.3s cubic-bezier(0.22, 1, 0.36, 1), left 1.3s cubic-bezier(0.22, 1, 0.36, 1);"></div>
-
 <!-- Fixed Nav -->
-<header style="position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 22px var(--pad); display: flex; justify-content: space-between; align-items: center; background: linear-gradient(180deg, rgba(11,11,11,0.96) 0%, rgba(11,11,11,0.7) 80%, transparent 100%);">
+<header style="position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 22px var(--pad); display: flex; justify-content: space-between; align-items: center; background: linear-gradient(180deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.7) 80%, transparent 100%);">
   <a href="#" style="font-family: 'Satoshi', sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.01em; color: #eae8e3; text-decoration: none;">Sidak Plaha</a>
   <nav style="display: flex; gap: 28px; align-items: center;">
     <a href="#about"     style="font-family: 'Satoshi', sans-serif; font-weight: 400; font-size: calc(13px * var(--desktop-text-scale)); color: #47453f; text-decoration: none; transition: color 0.18s;" style-hover="color: #8a8880;">about</a>
@@ -172,8 +169,6 @@
   &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#c3955b&quot;, &quot;tsType&quot;: &quot;string&quot; }
 }">
 class Component extends DCLogic {
-  _orbRef = React.createRef();
-
   _applyAccent() {
     const accent = this.props.accentColor ?? '#c3955b';
     document.documentElement.style.setProperty('--accent', accent);
@@ -182,16 +177,6 @@ class Component extends DCLogic {
   componentDidMount() {
     this._applyAccent();
     document.title = 'sidak plaha';
-
-    const orb = this._orbRef.current;
-    if (orb) {
-      const onMove = (e) => {
-        orb.style.left = e.clientX + 'px';
-        orb.style.top  = e.clientY + 'px';
-      };
-      window.addEventListener('mousemove', onMove);
-      this._rmMove = () => window.removeEventListener('mousemove', onMove);
-    }
 
     const saved = localStorage.getItem('ptf_scroll');
     if (saved) window.scrollTo({ top: parseInt(saved, 10) });
@@ -205,12 +190,11 @@ class Component extends DCLogic {
   }
 
   componentWillUnmount() {
-    if (this._rmMove)   this._rmMove();
     if (this._rmScroll) this._rmScroll();
   }
 
   renderVals() {
-    return { orbRef: this._orbRef };
+    return {};
   }
 }
 </script>
