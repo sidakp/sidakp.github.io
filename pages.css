@@ -606,6 +606,41 @@ body {
   .photo-grid { grid-template-columns: 1fr; }
 }
 
+/* ---------- reading log (notes.js) ---------- */
+.reading-log {
+  max-width: 640px;
+  margin-top: 46px;
+  padding-top: 34px;
+  border-top: 1px solid #181816;
+}
+
+.reading-log .section-label { margin-bottom: 22px; }
+
+.log-entry + .log-entry {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 1px solid #111110;
+}
+
+.log-meta {
+  margin-bottom: 9px;
+  color: #68635b;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.log-body {
+  color: #a5a19a;
+  font-size: 16px;
+  line-height: 1.68;
+  text-wrap: pretty;
+}
+
+.log-body p + p { margin-top: 12px; }
+
 @media (max-width: 560px) {
   .book-card { gap: 16px; padding: 14px 16px; }
   .book-cover { width: 62px; height: 93px; }
