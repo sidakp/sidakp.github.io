@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sidak plaha</title>
 <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<meta name="description" content="Sidak Plaha - aerospace engineering student at QMUL. Composites, orbital mechanics, books, and things made by hand.">
+<link rel="canonical" href="https://www.sidakp.com/">
+<meta property="og:title" content="sidak plaha">
+<meta property="og:description" content="Sidak Plaha - aerospace engineering student at QMUL. Composites, orbital mechanics, books, and things made by hand.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sidakp.com/">
+<meta name="twitter:card" content="summary">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -36,6 +43,9 @@
     }
     ::selection { background: rgba(167, 139, 250, 0.22); }
     @keyframes fadeUp   { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
     :root {
       --pad: 52px;
       --accent: #c3955b;

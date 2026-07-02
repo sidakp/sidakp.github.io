@@ -113,6 +113,37 @@ body {
   transform: scaleX(1);
 }
 
+.site-nav a:focus-visible,
+.back-link:focus-visible,
+.text-link:focus-visible {
+  outline: none;
+  color: #c8c6c0;
+}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .page-shell {
+    animation: page-in 0.6s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  @keyframes page-in {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* scroll reveal (reveal.js tags targets with .rv, then .in on entry) */
+  html.js-reveal .rv {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(.22,1,.36,1);
+  }
+
+  html.js-reveal .rv.in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .page-shell {
   max-width: var(--page-w);
   margin: 0 auto;
