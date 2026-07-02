@@ -25,11 +25,19 @@
   try { variant = localStorage.getItem('bg-variant'); } catch (e) {}
   if (VARIANTS.indexOf(variant) === -1) variant = DEFAULT;
 
+  // The body paints its own opaque #000 *after* negative-z-index positioned
+  // elements, which was hiding the canvas entirely. Let the root's #000 show
+  // through instead, and hang the canvas off <html> so the homepage's DC
+  // runtime can't wipe it when it re-renders <body> content.
+  var clearBody = document.createElement('style');
+  clearBody.textContent = 'body{background:transparent !important}';
+  document.head.appendChild(clearBody);
+
   var canvas = document.createElement('canvas');
   canvas.setAttribute('aria-hidden', 'true');
   canvas.style.cssText =
     'position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;';
-  document.body.appendChild(canvas);
+  document.documentElement.appendChild(canvas);
   var ctx = canvas.getContext('2d');
 
   var W, H, dpr, raf = 0, stopped = false;
@@ -193,6 +201,6 @@
       });
       bar.appendChild(b);
     });
-    document.body.appendChild(bar);
+    document.documentElement.appendChild(bar);
   }
 })();
