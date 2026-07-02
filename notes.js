@@ -6,13 +6,19 @@
   var m = location.pathname.match(/book-([a-z0-9-]+)\.html$/i);
   if (!m) return;
 
-  var MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'];
 
+  function ordinal(n) {
+    if (n % 100 >= 11 && n % 100 <= 13) return n + 'th';
+    return n + (['th', 'st', 'nd', 'rd'][n % 10] || 'th');
+  }
+
+  // "2026-06-15" -> "June 15th"
   function niceDate(iso) {
     var p = iso.split('-'); // YYYY-MM-DD
     if (p.length !== 3) return iso;
-    return parseInt(p[2], 10) + ' ' + (MONTHS[parseInt(p[1], 10) - 1] || p[1]) + ' ' + p[0];
+    return (MONTHS[parseInt(p[1], 10) - 1] || p[1]) + ' ' + ordinal(parseInt(p[2], 10));
   }
 
   fetch('./notes/' + m[1] + '.json')

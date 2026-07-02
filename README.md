@@ -161,8 +161,9 @@ Sidak's routine: read some pages → jot a dated note in Obsidian → publish to
 
 - **Source:** vault folder `D:\Users\Sidak's PC\Documents\Sidak\reading list\reading notes\`.
   One `<slug>.md` per book, slug matching the site's `book-<slug>.html`. Entries look like
-  `## 2026-07-02 21:40 | pp. 120–158` followed by free-form paragraphs (`*em*`/`**strong**`
-  supported). Time and pages are both optional. Files starting `_` are ignored
+  `## 2026-07-02 21:40 pp. 120-158` followed by free-form paragraphs (`*em*`/`**strong**`
+  supported). Time and pages are both optional; no `|` separators (Sidak's 60% keyboard),
+  though a stray `|` is tolerated. Dates render as "July 2nd". Files starting `_` are ignored
   (`_template.md` documents the format). Currently only `piranesi.md` exists (empty).
 - **Publish:** run `tools\publish-notes.ps1` (or Sidak tells Claude "publish my notes").
   It writes `notes/<slug>.json`, newest entry first. Review, commit, Sidak pushes.

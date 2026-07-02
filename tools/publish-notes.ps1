@@ -3,7 +3,7 @@
 # Reads every <slug>.md in the vault's "reading list\reading notes" folder
 # (files starting with "_" are skipped), parses dated entries of the form
 #
-#   ## YYYY-MM-DD [HH:MM] [| pp. X-Y]
+#   ## YYYY-MM-DD [HH:MM] [pp. X-Y]
 #   free-form thoughts (paragraphs, *em*, **strong**)
 #
 # and writes notes\<slug>.json in the repo, newest entry first. Each book
@@ -28,7 +28,9 @@ function Convert-Inline([string]$text) {
     return $t
 }
 
-$headerRx = [regex]'^##\s+(\d{4}-\d{2}-\d{2})(?:\s+(\d{1,2}:\d{2}))?(?:\s*\|\s*(.+?))?\s*$'
+# header: "## YYYY-MM-DD [HH:MM] [pages note]" - a "|" before the pages part
+# still works but is not required
+$headerRx = [regex]'^##\s+(\d{4}-\d{2}-\d{2})(?:\s+(\d{1,2}:\d{2}))?(?:\s*\|?\s+(.+?))?\s*$'
 $published = @()
 
 Get-ChildItem -Path $vaultNotes -Filter '*.md' | Where-Object { $_.Name -notlike '_*' } | ForEach-Object {
