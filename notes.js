@@ -14,11 +14,11 @@
     return n + (['th', 'st', 'nd', 'rd'][n % 10] || 'th');
   }
 
-  // "2026-06-15" -> "June 15th"
+  // "2026-06-15" -> "June 15th, 2026"
   function niceDate(iso) {
     var p = iso.split('-'); // YYYY-MM-DD
     if (p.length !== 3) return iso;
-    return (MONTHS[parseInt(p[1], 10) - 1] || p[1]) + ' ' + ordinal(parseInt(p[2], 10));
+    return (MONTHS[parseInt(p[1], 10) - 1] || p[1]) + ' ' + ordinal(parseInt(p[2], 10)) + ', ' + p[0];
   }
 
   fetch('./notes/' + m[1] + '.json')
@@ -28,13 +28,23 @@
       var body = document.querySelector('.review-body');
       if (!body) return;
 
-      var section = document.createElement('section');
+      // two columns: review prose stays centre-left, log rides the right rail
+      var layout = document.createElement('div');
+      layout.className = 'review-layout';
+      body.parentNode.insertBefore(layout, body);
+      layout.appendChild(body);
+
+      var section = document.createElement('aside');
       section.className = 'reading-log';
 
       var label = document.createElement('p');
       label.className = 'section-label';
       label.textContent = 'reading log';
       section.appendChild(label);
+
+      var list = document.createElement('div');
+      list.className = 'log-entries';
+      section.appendChild(list);
 
       entries.forEach(function (e) {
         var entry = document.createElement('article');
@@ -53,10 +63,10 @@
         text.innerHTML = e.html; // generated from Sidak's own vault by tools/publish-notes.ps1
         entry.appendChild(text);
 
-        section.appendChild(entry);
+        list.appendChild(entry);
       });
 
-      body.parentNode.insertBefore(section, body.nextSibling);
+      layout.appendChild(section);
     })
     .catch(function () { /* stay hidden */ });
 })();
