@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/edge-config": "latest",
+    "@vercel/functions": "latest"
+  }
+}
