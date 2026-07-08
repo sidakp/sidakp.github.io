@@ -31,6 +31,17 @@
 
 :root {
   --pad: 52px;
+  --accent: #88481E;
+  --bg: #FAF6F0;
+  --surface: #F0EDE7;
+  --surface-hover: color-mix(in srgb, #F0EDE7 72%, #D1AB92);
+  --text: #542A1B;
+  --text-soft: #88481E;
+  --text-muted: color-mix(in srgb, #542A1B 68%, #D1AB92);
+  --text-faint: color-mix(in srgb, #542A1B 46%, #F0EDE7);
+  --border: color-mix(in srgb, #D1AB92 62%, #FAF6F0);
+  --header-bg-strong: color-mix(in srgb, var(--bg) 96%, transparent);
+  --header-bg-mid: color-mix(in srgb, var(--bg) 76%, transparent);
   --page-w: 1180px;
   --h1: 74px;
   --body-lg: 18px;
@@ -39,19 +50,19 @@
 }
 
 html {
-  background: #000;
+  background: var(--bg);
 }
 
 body {
   min-height: 100vh;
-  background: #000;
-  color: #eae8e3;
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Erode', Georgia, serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: rgba(167, 139, 250, 0.22);
+  background: color-mix(in srgb, #D1AB92 54%, transparent);
 }
 
 .site-header {
@@ -64,7 +75,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 22px var(--pad);
-  background: linear-gradient(180deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.72) 78%, transparent 100%);
+  background: linear-gradient(180deg, var(--header-bg-strong) 0%, var(--header-bg-mid) 78%, transparent 100%);
 }
 
 .status-label,
@@ -102,7 +113,7 @@ body {
 .title {
   max-width: 620px;
   margin: 20px 0 22px;
-  color: #eae8e3;
+  color: var(--text);
   font-size: var(--h1);
   font-weight: 300;
   line-height: 1.03;
@@ -168,6 +179,24 @@ body {
   .panel {
     padding: 22px;
   }
+}
+
+.status-label,
+.detail {
+  color: var(--text-faint);
+}
+
+.title {
+  color: var(--text);
+}
+
+.copy {
+  color: var(--text-muted);
+}
+
+.panel {
+  border-color: var(--border);
+  background: var(--surface);
 }
 </style>
 </head>

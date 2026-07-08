@@ -26,19 +26,30 @@
       font-display: swap;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; background: #000; }
+    html { scroll-behavior: smooth; background: var(--bg); }
     body {
-      background: #000;
-      color: #eae8e3;
+      background: var(--bg);
+      color: var(--text);
       font-family: 'Erode', Georgia, serif;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-    ::selection { background: rgba(167, 139, 250, 0.22); }
+    ::selection { background: color-mix(in srgb, #D1AB92 54%, transparent); }
     @keyframes fadeUp   { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     :root {
       --pad: 52px;
-      --accent: #c3955b;
+      --accent: #88481E;
+      --bg: #FAF6F0;
+      --surface: #F0EDE7;
+      --surface-hover: color-mix(in srgb, #F0EDE7 72%, #D1AB92);
+      --text: #542A1B;
+      --text-soft: #88481E;
+      --text-muted: color-mix(in srgb, #542A1B 68%, #D1AB92);
+      --text-faint: color-mix(in srgb, #542A1B 46%, #F0EDE7);
+      --border: color-mix(in srgb, #D1AB92 62%, #FAF6F0);
+      --border-hover: #D1AB92;
+      --header-bg-strong: color-mix(in srgb, var(--bg) 96%, transparent);
+      --header-bg-mid: color-mix(in srgb, var(--bg) 76%, transparent);
       --page-w: 1180px;
       --h1: 74px;
       --label: 12px;
@@ -56,7 +67,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 22px var(--pad);
-      background: linear-gradient(180deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.72) 78%, transparent 100%);
+      background: linear-gradient(180deg, var(--header-bg-strong) 0%, var(--header-bg-mid) 78%, transparent 100%);
     }
     .logo,
     .site-nav a,
@@ -67,7 +78,7 @@
       letter-spacing: 0;
     }
     .logo {
-      color: #eae8e3;
+      color: var(--text);
       font-size: 14px;
       font-weight: 600;
       text-decoration: none;
@@ -115,7 +126,7 @@
     .eyebrow { margin-bottom: 22px; }
     .name {
       margin-bottom: 24px;
-      color: #eae8e3;
+      color: var(--text);
       font-family: 'Satoshi', sans-serif;
       font-size: var(--h1);
       font-weight: 300;
@@ -287,6 +298,55 @@
         gap: 4px;
       }
     }
+    .logo,
+    .site-nav a {
+      color: var(--text-faint);
+    }
+    .site-nav a::after {
+      background: var(--accent);
+    }
+    .logo:hover,
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"],
+    .text-link.internal {
+      color: var(--text-soft);
+    }
+    .name,
+    .item-title {
+      color: var(--text);
+    }
+    .name span {
+      color: var(--text-soft);
+    }
+    .lede,
+    .about-copy,
+    .item-copy {
+      color: var(--text-muted);
+    }
+    .eyebrow,
+    .section-label,
+    .chip,
+    .item-date,
+    .item-meta {
+      color: var(--text-faint);
+    }
+    .chip,
+    .info-panel,
+    .item + .item {
+      border-color: var(--border);
+    }
+    .info-panel {
+      background: var(--surface);
+    }
+    .info-panel:hover,
+    .panel-link:hover,
+    .panel-link:focus-visible {
+      border-color: var(--border-hover);
+      background: var(--surface-hover);
+    }
+    .site-footer {
+      color: var(--text-faint);
+    }
   </style>
 </helmet>
 
@@ -359,11 +419,11 @@
 </footer>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{
-  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#c3955b&quot;, &quot;tsType&quot;: &quot;string&quot; }
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#88481E&quot;, &quot;tsType&quot;: &quot;string&quot; }
 }">
 class Component extends DCLogic {
   _applyAccent() {
-    const accent = this.props.accentColor ?? '#c3955b';
+    const accent = this.props.accentColor ?? '#88481E';
     document.documentElement.style.setProperty('--accent', accent);
   }
 

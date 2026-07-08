@@ -38,22 +38,21 @@ making changes.
 
 ## 2. Design system
 
-Dark, minimal, refined. Subtle motion only. Sidak likes elements that are quiet in the
+Warm, minimal, refined. Subtle motion only. Sidak likes elements that are quiet in the
 periphery and resolve on hover / direct attention (sliding underlines, translucent bits).
 
-- **Background:** `#000`.  **Primary text:** `#eae8e3`.
+- **Palette:** `#D1AB92`, `#542A1B`, `#F0EDE7`, `#88481E`, `#FAF6F0`.
+- **Background:** `#FAF6F0`.  **Primary text:** `#542A1B`.
 - **Fonts (self-hosted woff2 in `/fonts`):**
   - `Satoshi` (sans) — headings, nav, labels, UI chrome.
   - `Erode` (serif) — body / review prose.
   - No external font CDNs currently. (An earlier bookshelf concept used Google Fonts
     "Patrick Hand"/"Caveat"; that concept was scrapped and the file deleted.)
-- **Accent:** `--accent: #c3955b` (warm gold). On the homepage it's also settable via the
-  DCLogic script's `accentColor` prop. **Gold text is reserved for links that leave the
-  site** (Sidak's rule); internal links use the neutral `.text-link.internal` variant
-  (`#a5a39d`), and `.back-link` hover brightens to `#c8c6c0` instead of gold.
-- **Text selection:** `rgba(167,139,250,0.22)` (soft purple).
-- **Cards/panels:** bg `#050505`, border `1px solid #181816`, radius 8–12px; hover raises
-  border toward `#24211e`/`#2c2620` and lifts slightly.
+- **Accent:** `--accent: #88481E` (rust brown). On the homepage it's also settable via the
+  DCLogic script's `accentColor` prop. Internal links use softer palette variants.
+- **Text selection:** translucent `#D1AB92`.
+- **Cards/panels:** bg `#F0EDE7`, palette-mixed tan border, radius 8-12px; hover raises
+  border toward `#D1AB92` and lifts slightly.
 - **Shared tokens** (`:root` in both `pages.css` and inline in `index.html`):
   `--pad: 52px`, `--page-w: 1180px`, `--h1: 74px`, plus body/label/meta sizes. Responsive
   overrides at `max-height:780px`, `max-width:980px`, `max-width:560px`.
