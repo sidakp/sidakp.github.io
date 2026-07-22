@@ -266,12 +266,27 @@ body {
 }
 
 .site-footer {
-  max-width: var(--page-w);
-  margin: 0 auto;
-  padding: 0 var(--pad) 28px;
+  position: fixed;
+  right: var(--pad);
+  bottom: 22px;
+  z-index: 2;
   color: #302e2a;
   font-size: 12px;
   font-weight: 400;
+}
+
+.site-footer .footer-dot {
+  margin: 0 6px;
+  opacity: 0.6;
+}
+
+@media (max-width: 980px) {
+  .site-footer {
+    position: static;
+    max-width: var(--page-w);
+    margin: 0 auto;
+    padding: 0 var(--pad) 28px;
+  }
 }
 
 /* ---------- books list ---------- */
