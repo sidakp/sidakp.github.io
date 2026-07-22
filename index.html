@@ -314,6 +314,21 @@
       color: #a5a39d;
       font-weight: 500;
     }
+    .quick-link {
+      display: block;
+      margin-top: -6px;
+      color: var(--text-faint);
+      font-family: 'Satoshi', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      text-decoration: none;
+      transition: color 0.18s ease;
+    }
+    .quick-link:hover,
+    .quick-link:focus-visible {
+      color: var(--accent);
+      outline: none;
+    }
     .site-footer {
       position: fixed;
       right: var(--pad);
@@ -544,19 +559,7 @@
         <span class="text-link internal">what we've built →</span>
       </article>
     </a>
-    <a class="info-panel panel-link" href="./resin-calculator.html">
-      <div class="panel-head">
-        <p class="section-label">tools</p>
-      </div>
-      <article class="item">
-        <div class="item-row">
-          <h2 class="item-title">Resin Infusion Calculator</h2>
-        </div>
-        <p class="item-meta">Quick link for the composites team</p>
-        <p class="item-copy">Work out resin and hardener mass for any number of fabric layers — for me and next year's Formula Student composites members.</p>
-        <span class="text-link internal">open calculator →</span>
-      </article>
-    </a>
+    <a class="quick-link" href="./resin-calculator.html">resin calculator — quick link for composites members →</a>
     <a class="info-panel panel-link" href="./inflection.html">
       <div class="panel-head">
         <p class="section-label">tutoring</p>
