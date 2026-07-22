@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>resin calculator | sidak plaha</title>
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<meta name="description" content="Resin infusion calculator - work out resin and hardener mass from fibre layer dimensions and GSM.">
+<link rel="canonical" href="https://www.sidakp.com/resin-calculator.html">
+<meta property="og:title" content="resin calculator | sidak plaha">
+<meta property="og:description" content="Resin infusion calculator - work out resin and hardener mass from fibre layer dimensions and GSM.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sidakp.com/resin-calculator.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="./pages.css">
+<script src="./theme.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="./index.html">home</a>
+    <a href="./experience.html" aria-current="page">experience</a>
+    <a href="./books.html">books</a>
+    <a href="./thoughts.html">thoughts</a>
+  </nav>
+</header>
+
+<main class="page-shell">
+  <a class="back-link" href="./composites.html">← composites</a>
+
+  <h1 class="page-title"><strong>Resin infusion calculator</strong></h1>
+
+  <section class="comp-section">
+    <p class="section-label">layer inputs</p>
+    <h2 class="comp-title">Fabric layers</h2>
+
+    <div class="calc-grid" id="layers-container"></div>
+
+    <button class="calc-add-btn" type="button" id="add-layer">+ Add layer</button>
+
+    <div class="calc-results">
+      <div class="calc-results-grid">
+        <div>
+          <p class="calc-stat-label">Total fibre mass</p>
+          <p class="calc-stat-value" id="out-total-fibre">—</p>
+        </div>
+        <div>
+          <p class="calc-stat-label">Resin + hardener, loss-adjusted (×1.3)</p>
+          <p class="calc-stat-value" id="out-total-loss">—</p>
+        </div>
+      </div>
+
+      <div class="calc-final">
+        <div class="calc-final-card">
+          <p class="calc-final-label">Resin</p>
+          <p class="calc-final-value" id="out-resin">— <span>g</span></p>
+        </div>
+        <div class="calc-final-card">
+          <p class="calc-final-label">Hardener</p>
+          <p class="calc-final-value" id="out-hardener">— <span>g</span></p>
+        </div>
+      </div>
+
+      <p class="calc-note">Layer mass = GSM × area. Total fibre mass is scaled ×1.3 to account for resin lost in the feed and waste tubes during infusion, then split into resin and hardener at a 100:30 ratio.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>2026 Sidak Plaha</span>
+</footer>
+<script src="./reveal.js"></script>
+<script>
+(function () {
+  var container = document.getElementById('layers-container');
+  var addBtn = document.getElementById('add-layer');
+  var nextId = 0;
+  var layers = [];
+
+  function fmt(n) {
+    return n.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  }
+
+  function addLayer(length, width, gsm) {
+    var id = nextId++;
+    var card = document.createElement('div');
+    card.className = 'calc-card';
+    card.dataset.id = id;
+    card.innerHTML =
+      '<div class="calc-card-head">' +
+        '<p class="calc-card-title"></p>' +
+        '<button class="calc-remove-btn" type="button" aria-label="Remove layer">&times;</button>' +
+      '</div>' +
+      '<div class="calc-field">' +
+        '<label>Length (m)</label>' +
+        '<input type="number" class="in-length" step="0.01" min="0" value="' + length + '">' +
+      '</div>' +
+      '<div class="calc-field">' +
+        '<label>Width (m)</label>' +
+        '<input type="number" class="in-width" step="0.01" min="0" value="' + width + '">' +
+      '</div>' +
+      '<div class="calc-field">' +
+        '<label>GSM (g/m²)</label>' +
+        '<input type="number" class="in-gsm" step="1" min="0" value="' + gsm + '">' +
+      '</div>' +
+      '<div class="calc-layer-output">' +
+        '<span>Area: <strong class="out-area">—</strong></span>' +
+        '<span>Mass: <strong class="out-mass">—</strong></span>' +
+      '</div>';
+
+    container.appendChild(card);
+
+    card.querySelectorAll('input').forEach(function (input) {
+      input.addEventListener('input', calculate);
+    });
+    card.querySelector('.calc-remove-btn').addEventListener('click', function () {
+      layers = layers.filter(function (l) { return l.id !== id; });
+      card.remove();
+      renumber();
+      calculate();
+    });
+
+    layers.push({ id: id, card: card });
+    renumber();
+    return card;
+  }
+
+  function renumber() {
+    layers.forEach(function (l, i) {
+      l.card.querySelector('.calc-card-title').textContent = 'Layer ' + (i + 1);
+      l.card.querySelector('.calc-remove-btn').style.visibility = layers.length > 1 ? 'visible' : 'hidden';
+    });
+  }
+
+  function calculate() {
+    var totalFibre = 0;
+
+    layers.forEach(function (l) {
+      var length = parseFloat(l.card.querySelector('.in-length').value) || 0;
+      var width = parseFloat(l.card.querySelector('.in-width').value) || 0;
+      var gsm = parseFloat(l.card.querySelector('.in-gsm').value) || 0;
+      var area = length * width;
+      var mass = gsm * area;
+      totalFibre += mass;
+
+      l.card.querySelector('.out-area').textContent = area.toFixed(3) + ' m²';
+      l.card.querySelector('.out-mass').textContent = fmt(mass) + ' g';
+    });
+
+    var totalLoss = totalFibre * 1.3;
+    var resin = (totalLoss / 130) * 100;
+    var hardener = (totalLoss / 150) * 30;
+
+    document.getElementById('out-total-fibre').textContent = fmt(totalFibre) + ' g';
+    document.getElementById('out-total-loss').textContent = fmt(totalLoss) + ' g';
+    document.getElementById('out-resin').innerHTML = fmt(resin) + ' <span>g</span>';
+    document.getElementById('out-hardener').innerHTML = fmt(hardener) + ' <span>g</span>';
+  }
+
+  addBtn.addEventListener('click', function () {
+    addLayer(0.98, 0.47, 650);
+    calculate();
+  });
+
+  addLayer(0.98, 0.47, 690);
+  addLayer(0.98, 0.47, 650);
+  calculate();
+})();
+</script>
+</body>
+</html>
