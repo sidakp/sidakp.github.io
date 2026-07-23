@@ -85,16 +85,12 @@
       --header-bg-mid: rgba(0, 0, 0, 0.72);
     }
     .site-header {
-      position: fixed;
-      top: 38px;
-      left: 0;
-      right: 0;
-      z-index: 200;
+      position: static;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 22px var(--pad);
-      background: linear-gradient(180deg, var(--header-bg-strong) 0%, var(--header-bg-mid) 78%, transparent 100%);
+      padding: 38px var(--pad) 22px;
+      background: transparent;
     }
     .site-nav a,
     .eyebrow,
@@ -144,9 +140,9 @@
       gap: 64px;
       align-items: start;
       max-width: var(--page-w);
-      min-height: 100vh;
+      min-height: calc(100vh - 200px);
       margin: 0 auto;
-      padding: 140px var(--pad) 72px;
+      padding: 40px var(--pad) 72px;
     }
     .intro {
       max-width: 560px;
@@ -315,10 +311,10 @@
       font-weight: 500;
     }
     .site-footer {
-      position: fixed;
-      right: var(--pad);
-      bottom: 22px;
-      z-index: 2;
+      position: static;
+      max-width: var(--page-w);
+      margin: 0 auto;
+      padding: 0 var(--pad) 28px;
       color: #302e2a;
       font-size: 12px;
       font-weight: 400;
@@ -329,9 +325,8 @@
     }
     @media (max-height: 780px) and (min-width: 981px) {
       :root { --h1: 64px; --body-lg: 16px; --body: 14px; --meta: 12px; }
-      .landing { padding-top: 112px; padding-bottom: 52px; }
-      .intro { padding-top: 14px; }
-      .side-column { padding-top: 24px; gap: 14px; }
+      .landing { padding-bottom: 52px; }
+      .side-column { gap: 14px; }
       .lede { margin-bottom: 30px; font-size: 19px; line-height: 1.45; }
       .about-copy { gap: 10px; line-height: 1.48; }
       .chip-list { margin-top: 20px; }
@@ -346,7 +341,6 @@
         grid-template-columns: 1fr;
         gap: 42px;
         min-height: auto;
-        padding-top: 146px;
       }
       .intro {
         max-width: 720px;
@@ -354,19 +348,13 @@
         padding-top: 0;
       }
       .side-column { padding-top: 0; }
-      .site-footer {
-        position: static;
-        max-width: var(--page-w);
-        margin: 0 auto;
-        padding: 0 var(--pad) 28px;
-      }
     }
     @media (max-width: 560px) {
       :root { --pad: 18px; --h1: 40px; --body-lg: 16px; --body: 14px; }
-      .site-header { padding: 18px var(--pad); }
+      .site-header { padding: 24px var(--pad) 18px; }
       .site-nav { gap: 16px; }
       .site-nav a { font-size: 13px; }
-      .landing { padding-top: 124px; padding-bottom: 44px; }
+      .landing { padding-bottom: 44px; }
       .name { margin-bottom: 18px; }
       .lede { margin-bottom: 34px; font-size: 18px; line-height: 1.5; }
       .info-panel { padding: 18px; }

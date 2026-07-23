@@ -77,16 +77,12 @@ body {
 }
 
 .site-header {
-  position: fixed;
-  top: 38px;
-  left: 0;
-  right: 0;
-  z-index: 200;
+  position: static;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px var(--pad);
-  background: linear-gradient(180deg, var(--header-bg-strong) 0%, var(--header-bg-mid) 78%, transparent 100%);
+  padding: 38px var(--pad) 22px;
+  background: transparent;
 }
 
 .site-nav a,
@@ -175,7 +171,7 @@ body {
 .page-shell {
   max-width: var(--page-w);
   margin: 0 auto;
-  padding: 148px var(--pad) 72px;
+  padding: 40px var(--pad) 72px;
 }
 
 .page-title {
@@ -266,10 +262,10 @@ body {
 }
 
 .site-footer {
-  position: fixed;
-  right: var(--pad);
-  bottom: 22px;
-  z-index: 2;
+  position: static;
+  max-width: var(--page-w);
+  margin: 0 auto;
+  padding: 0 var(--pad) 28px;
   color: #302e2a;
   font-size: 12px;
   font-weight: 400;
@@ -278,15 +274,6 @@ body {
 .site-footer .footer-dot {
   margin: 0 6px;
   opacity: 0.6;
-}
-
-@media (max-width: 980px) {
-  .site-footer {
-    position: static;
-    max-width: var(--page-w);
-    margin: 0 auto;
-    padding: 0 var(--pad) 28px;
-  }
 }
 
 /* ---------- books list ---------- */
@@ -904,7 +891,7 @@ body {
   }
 
   .page-shell {
-    padding-top: 118px;
+    padding-top: 28px;
     padding-bottom: 52px;
   }
 
@@ -931,7 +918,7 @@ body {
   }
 
   .page-shell {
-    padding-top: 150px;
+    padding-top: 32px;
   }
 }
 
@@ -944,7 +931,7 @@ body {
   }
 
   .site-header {
-    padding: 18px var(--pad);
+    padding: 24px var(--pad) 18px;
   }
 
   .site-nav {
@@ -956,7 +943,7 @@ body {
   }
 
   .page-shell {
-    padding-top: 128px;
+    padding-top: 20px;
     padding-bottom: 44px;
   }
 
