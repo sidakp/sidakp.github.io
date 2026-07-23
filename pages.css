@@ -260,6 +260,20 @@ h6 * {
   font-variation-settings: 'wght' 72, 'wdth' 0;
 }
 
+.page-title--calc {
+  max-width: 900px;
+  font-size: 48px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .page-title--calc {
+    max-width: 720px;
+    font-size: var(--h1);
+    white-space: normal;
+  }
+}
+
 .page-intro {
   max-width: 560px;
   margin-bottom: 44px;
