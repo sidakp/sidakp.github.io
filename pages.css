@@ -242,7 +242,7 @@ h6 * {
 .page-shell {
   max-width: var(--page-w);
   margin: 0 auto;
-  padding: 40px var(--pad) 72px;
+  padding: 80px var(--pad) 72px;
 }
 
 .page-title {
@@ -993,7 +993,7 @@ h6 * {
   }
 
   .page-shell {
-    padding-top: 28px;
+    padding-top: 56px;
     padding-bottom: 52px;
   }
 
@@ -1020,7 +1020,7 @@ h6 * {
   }
 
   .page-shell {
-    padding-top: 32px;
+    padding-top: 64px;
   }
 }
 
@@ -1045,7 +1045,7 @@ h6 * {
   }
 
   .page-shell {
-    padding-top: 20px;
+    padding-top: 40px;
     padding-bottom: 44px;
   }
 
