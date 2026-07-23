@@ -1,14 +1,54 @@
 @font-face {
   font-family: 'Satoshi';
-  src: url('./fonts/Satoshi-Variable.woff2') format('woff2');
+  src: url('./fonts/Honeychrome/Honeychrome/VARIABLE/Honeychrome-VariableVF.woff2') format('woff2-variations'),
+       url('./fonts/Satoshi-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 88%;
+}
+
+@font-face {
+  font-family: 'Erode';
+  src: url('./fonts/Honeychrome/Honeychrome/VARIABLE/Honeychrome-VariableVF.woff2') format('woff2-variations'),
+       url('./fonts/Erode-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 88%;
+}
+
+@font-face {
+  font-family: 'Honeychrome Footer Reference';
+  src: url('./fonts/Honeychrome/Honeychrome/VARIABLE/Honeychrome-VariableVF.woff2') format('woff2-variations'),
+       url('./fonts/Erode-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi Headings';
+  src: url('./fonts/Satoshi-Variable.woff2') format('woff2-variations');
   font-weight: 300 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Erode';
-  src: url('./fonts/Erode-Variable.woff2') format('woff2');
+  font-family: 'Satoshi Calculator';
+  src: url('./fonts/Satoshi-Variable.woff2') format('woff2-variations');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Erode Calculator';
+  src: url('./fonts/Erode-Variable.woff2') format('woff2-variations');
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
@@ -69,7 +109,37 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Erode', Georgia, serif;
+  font-variation-settings: 'wght' 0, 'wdth' 0;
+  font-synthesis: none;
+  letter-spacing: 0.012em;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.page-title,
+.entry-title,
+.book-name,
+.review-name,
+.comp-card-name,
+.comp-title,
+.calc-card-title {
+  font-family: 'Satoshi Headings', sans-serif !important;
+  font-variation-settings: normal !important;
+  letter-spacing: 0;
+}
+
+h1 *,
+h2 *,
+h3 *,
+h4 *,
+h5 *,
+h6 * {
+  font-variation-settings: normal !important;
 }
 
 ::selection {
@@ -109,6 +179,7 @@ body {
   color: #5b5852;
   font-size: 15px;
   font-weight: 400;
+  font-variation-settings: 'wght' 0, 'wdth' 0;
   text-decoration: none;
   transition: color 0.18s ease;
 }
@@ -180,11 +251,13 @@ body {
   color: var(--text);
   font-size: var(--h1);
   font-weight: 300;
+  font-variation-settings: 'wght' 0, 'wdth' 0;
   line-height: 1.03;
 }
 
 .page-title strong {
   font-weight: 700;
+  font-variation-settings: 'wght' 72, 'wdth' 0;
 }
 
 .page-intro {
@@ -200,6 +273,7 @@ body {
   color: #787570;
   font-size: var(--label);
   font-weight: 500;
+  font-variation-settings: 'wght' 20, 'wdth' 0;
   line-height: 1.2;
   text-transform: uppercase;
   user-select: none;
@@ -235,6 +309,7 @@ body {
   color: #c8c6c0;
   font-size: 17px;
   font-weight: 550;
+  font-variation-settings: 'wght' 30, 'wdth' 0;
   line-height: 1.25;
 }
 
@@ -243,6 +318,7 @@ body {
   color: #4a4741;
   font-size: 12px;
   font-weight: 400;
+  font-variation-settings: 'wght' 0, 'wdth' 0;
   white-space: nowrap;
 }
 
@@ -269,6 +345,8 @@ body {
   color: #302e2a;
   font-size: 12px;
   font-weight: 400;
+  font-variation-settings: 'wght' 0, 'wdth' 0;
+  font-family: 'Honeychrome Footer Reference', sans-serif;
 }
 
 .site-footer .footer-dot {
@@ -328,6 +406,7 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: 26px;
   font-weight: 650;
+  font-variation-settings: 'wght' 58, 'wdth' 0;
   line-height: 1.16;
   color: #d8d5cf;
 }
@@ -389,6 +468,7 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: 12px;
   font-weight: 550;
+  font-variation-settings: 'wght' 30, 'wdth' 0;
   letter-spacing: 0.3px;
   color: #d3ac76;
   width: fit-content;
@@ -416,6 +496,7 @@ body {
   background: rgba(195,149,91,0.07);
   color: #d3ac76;
   font-weight: 600;
+  font-variation-settings: 'wght' 45, 'wdth' 0;
   letter-spacing: 0.3px;
 }
 
@@ -507,6 +588,7 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: 34px;
   font-weight: 700;
+  font-variation-settings: 'wght' 72, 'wdth' 0;
   line-height: 1.05;
   color: var(--text);
   margin-bottom: 10px;
@@ -569,6 +651,7 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: 13px;
   font-weight: 600;
+  font-variation-settings: 'wght' 45, 'wdth' 0;
   text-decoration: none;
 }
 
@@ -591,6 +674,7 @@ body {
 .text-link.internal {
   color: #a5a39d;
   font-weight: 500;
+  font-variation-settings: 'wght' 20, 'wdth' 0;
 }
 
 /* ---------- dictionary definition block (inflection page) ---------- */
@@ -603,6 +687,7 @@ body {
   font-family: 'Erode', Georgia, serif;
   font-size: 62px;
   font-weight: 700;
+  font-variation-settings: 'wght' 72, 'wdth' 0;
   line-height: 1;
   letter-spacing: -0.5px;
   color: var(--text);
@@ -688,6 +773,7 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: 11px;
   font-weight: 500;
+  font-variation-settings: 'wght' 20, 'wdth' 0;
   letter-spacing: 1.4px;
   text-transform: uppercase;
   text-align: center;
@@ -706,6 +792,7 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: 19px;
   font-weight: 650;
+  font-variation-settings: 'wght' 58, 'wdth' 0;
   line-height: 1.2;
   color: #d8d5cf;
 }
@@ -739,6 +826,7 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: 22px;
   font-weight: 650;
+  font-variation-settings: 'wght' 58, 'wdth' 0;
   line-height: 1.2;
   color: #d8d5cf;
   margin: 8px 0 14px;
@@ -775,6 +863,7 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: 11px;
   font-weight: 500;
+  font-variation-settings: 'wght' 20, 'wdth' 0;
   letter-spacing: 1.4px;
   text-transform: uppercase;
   text-align: center;
@@ -846,6 +935,7 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: 11px;
   font-weight: 500;
+  font-variation-settings: 'wght' 20, 'wdth' 0;
   letter-spacing: 0.8px;
   text-transform: uppercase;
 }
@@ -1201,6 +1291,7 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: 13px;
   font-weight: 600;
+  font-variation-settings: 'wght' 45, 'wdth' 0;
   letter-spacing: 0.3px;
   color: var(--text-soft);
   text-transform: uppercase;
@@ -1236,7 +1327,8 @@ body {
   margin-top: 16px;
   padding-top: 14px;
   border-top: 1px solid var(--border);
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Satoshi Calculator', sans-serif;
+  font-variation-settings: normal;
   font-size: 13px;
   color: var(--text-muted);
 }
@@ -1244,6 +1336,7 @@ body {
 .calc-layer-output strong {
   color: var(--text);
   font-weight: 600;
+  font-variation-settings: normal;
 }
 
 .calc-add-btn {
@@ -1258,6 +1351,7 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: 13px;
   font-weight: 600;
+  font-variation-settings: 'wght' 45, 'wdth' 0;
   padding: 10px 16px;
   cursor: pointer;
   transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease;
@@ -1288,7 +1382,8 @@ body {
 }
 
 .calc-field input {
-  font-family: 'Satoshi', sans-serif;
+  font-family: 'Satoshi Calculator', sans-serif;
+  font-variation-settings: normal;
   font-size: 15px;
   color: var(--text);
   background: var(--bg);
@@ -1320,13 +1415,15 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: var(--label);
   font-weight: 500;
+  font-variation-settings: 'wght' 20, 'wdth' 0;
   color: var(--text-faint);
   text-transform: uppercase;
   margin-bottom: 4px;
 }
 
 .calc-stat-value {
-  font-family: 'Erode', Georgia, serif;
+  font-family: 'Erode Calculator', Georgia, serif;
+  font-variation-settings: normal;
   font-size: 22px;
   color: var(--text);
 }
@@ -1348,13 +1445,15 @@ body {
   font-family: 'Satoshi', sans-serif;
   font-size: var(--label);
   font-weight: 600;
+  font-variation-settings: 'wght' 45, 'wdth' 0;
   color: var(--accent);
   text-transform: uppercase;
   margin-bottom: 6px;
 }
 
 .calc-final-value {
-  font-family: 'Erode', Georgia, serif;
+  font-family: 'Erode Calculator', Georgia, serif;
+  font-variation-settings: normal;
   font-size: 30px;
   color: var(--text);
 }

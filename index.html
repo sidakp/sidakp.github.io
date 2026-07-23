@@ -21,15 +21,37 @@
   <style>
     @font-face {
       font-family: 'Satoshi';
-      src: url('./fonts/Satoshi-Variable.woff2') format('woff2');
-      font-weight: 300 900;
+      src: url('./fonts/Honeychrome/Honeychrome/VARIABLE/Honeychrome-VariableVF.woff2') format('woff2-variations'),
+           url('./fonts/Satoshi-Variable.woff2') format('woff2');
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      font-display: swap;
+      size-adjust: 88%;
+    }
+    @font-face {
+      font-family: 'Erode';
+      src: url('./fonts/Honeychrome/Honeychrome/VARIABLE/Honeychrome-VariableVF.woff2') format('woff2-variations'),
+           url('./fonts/Erode-Variable.woff2') format('woff2');
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      font-display: swap;
+      size-adjust: 88%;
+    }
+    @font-face {
+      font-family: 'Honeychrome Footer Reference';
+      src: url('./fonts/Honeychrome/Honeychrome/VARIABLE/Honeychrome-VariableVF.woff2') format('woff2-variations'),
+           url('./fonts/Erode-Variable.woff2') format('woff2');
+      font-weight: normal;
+      font-stretch: normal;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
-      font-family: 'Erode';
-      src: url('./fonts/Erode-Variable.woff2') format('woff2');
-      font-weight: 300 700;
+      font-family: 'Satoshi Headings';
+      src: url('./fonts/Satoshi-Variable.woff2') format('woff2-variations');
+      font-weight: 300 900;
       font-style: normal;
       font-display: swap;
     }
@@ -39,8 +61,31 @@
       background: var(--bg);
       color: var(--text);
       font-family: 'Erode', Georgia, serif;
+      font-variation-settings: 'wght' 0, 'wdth' 0;
+      font-synthesis: none;
+      letter-spacing: 0.012em;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .name,
+    .item-title {
+      font-family: 'Satoshi Headings', sans-serif !important;
+      font-variation-settings: normal !important;
+      letter-spacing: 0;
+    }
+    h1 *,
+    h2 *,
+    h3 *,
+    h4 *,
+    h5 *,
+    h6 * {
+      font-variation-settings: normal !important;
     }
     ::selection { background: var(--selection); }
     @keyframes fadeUp   { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -112,6 +157,7 @@
       color: #5b5852;
       font-size: 15px;
       font-weight: 400;
+      font-variation-settings: 'wght' 0, 'wdth' 0;
       text-decoration: none;
       transition: color 0.18s ease;
     }
@@ -155,6 +201,7 @@
       color: #787570;
       font-size: var(--label);
       font-weight: 500;
+      font-variation-settings: 'wght' 20, 'wdth' 0;
       line-height: 1.2;
       text-transform: uppercase;
       user-select: none;
@@ -166,10 +213,14 @@
       font-family: 'Satoshi', sans-serif;
       font-size: var(--h1);
       font-weight: 300;
+      font-variation-settings: 'wght' 0, 'wdth' 0;
       letter-spacing: 0;
       line-height: 1.03;
     }
-    .name strong { font-weight: 700; }
+    .name strong {
+      font-weight: 700;
+      font-variation-settings: 'wght' 72, 'wdth' 0;
+    }
     .name span { color: #4a4845; }
     .lede {
       max-width: 520px;
@@ -177,6 +228,7 @@
       color: #85817a;
       font-size: 21px;
       font-weight: 300;
+      font-variation-settings: 'wght' 0, 'wdth' 0;
       line-height: 1.55;
       text-wrap: pretty;
     }
@@ -188,6 +240,7 @@
       color: #aaa7a0;
       font-size: var(--body-lg);
       font-weight: 400;
+      font-variation-settings: 'wght' 0, 'wdth' 0;
       line-height: 1.58;
       text-wrap: pretty;
     }
@@ -202,6 +255,7 @@
       color: #827e76;
       font-size: 12px;
       font-weight: 400;
+      font-variation-settings: 'wght' 0, 'wdth' 0;
       line-height: 1;
       padding: 7px 10px;
     }
@@ -261,6 +315,7 @@
       color: #c8c6c0;
       font-size: 17px;
       font-weight: 550;
+      font-variation-settings: 'wght' 30, 'wdth' 0;
       line-height: 1.25;
     }
     .item-date {
@@ -268,6 +323,7 @@
       color: #4a4741;
       font-size: 12px;
       font-weight: 400;
+      font-variation-settings: 'wght' 0, 'wdth' 0;
       white-space: nowrap;
     }
     .item-meta {
@@ -289,6 +345,7 @@
       color: var(--accent);
       font-size: 13px;
       font-weight: 600;
+      font-variation-settings: 'wght' 45, 'wdth' 0;
       text-decoration: none;
     }
     .text-link::after {
@@ -309,6 +366,7 @@
     .text-link.internal {
       color: #a5a39d;
       font-weight: 500;
+      font-variation-settings: 'wght' 20, 'wdth' 0;
     }
     .site-footer {
       position: static;
@@ -318,6 +376,8 @@
       color: #302e2a;
       font-size: 12px;
       font-weight: 400;
+      font-variation-settings: 'wght' 0, 'wdth' 0;
+      font-family: 'Honeychrome Footer Reference', sans-serif;
     }
     .site-footer .footer-dot {
       margin: 0 6px;

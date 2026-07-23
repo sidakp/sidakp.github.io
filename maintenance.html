@@ -9,16 +9,30 @@
 <style>
 @font-face {
   font-family: 'Satoshi';
-  src: url('./fonts/Satoshi-Variable.woff2') format('woff2');
-  font-weight: 300 900;
+  src: url('./fonts/Honeychrome/Honeychrome/VARIABLE/Honeychrome-VariableVF.woff2') format('woff2-variations'),
+       url('./fonts/Satoshi-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-stretch: normal;
   font-style: normal;
   font-display: swap;
+  size-adjust: 88%;
 }
 
 @font-face {
   font-family: 'Erode';
-  src: url('./fonts/Erode-Variable.woff2') format('woff2');
-  font-weight: 300 700;
+  src: url('./fonts/Honeychrome/Honeychrome/VARIABLE/Honeychrome-VariableVF.woff2') format('woff2-variations'),
+       url('./fonts/Erode-Variable.woff2') format('woff2');
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 88%;
+}
+
+@font-face {
+  font-family: 'Satoshi Headings';
+  src: url('./fonts/Satoshi-Variable.woff2') format('woff2-variations');
+  font-weight: 300 900;
   font-style: normal;
   font-display: swap;
 }
@@ -58,7 +72,31 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Erode', Georgia, serif;
+  font-variation-settings: 'wght' 0, 'wdth' 0;
+  font-synthesis: none;
+  letter-spacing: 0.012em;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+  font-family: 'Satoshi Headings', sans-serif !important;
+  font-variation-settings: normal !important;
+  letter-spacing: 0;
+}
+
+h1 *,
+h2 *,
+h3 *,
+h4 *,
+h5 *,
+h6 * {
+  font-variation-settings: normal !important;
 }
 
 ::selection {
@@ -88,6 +126,7 @@ body {
   color: #787570;
   font-size: var(--label);
   font-weight: 500;
+  font-variation-settings: 'wght' 20, 'wdth' 0;
   line-height: 1.2;
   text-transform: uppercase;
   user-select: none;
@@ -116,11 +155,13 @@ body {
   color: var(--text);
   font-size: var(--h1);
   font-weight: 300;
+  font-variation-settings: 'wght' 0, 'wdth' 0;
   line-height: 1.03;
 }
 
 .title strong {
   font-weight: 700;
+  font-variation-settings: 'wght' 72, 'wdth' 0;
 }
 
 .copy {
