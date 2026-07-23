@@ -76,7 +76,7 @@
   --header-bg-strong: color-mix(in srgb, var(--bg) 96%, transparent);
   --header-bg-mid: color-mix(in srgb, var(--bg) 76%, transparent);
   --page-w: 1180px;
-  --h1: 74px;
+  --h1: 60px;
   --label: 12px;
   --body-lg: 18px;
   --body: 15px;
@@ -261,15 +261,13 @@ h6 * {
 }
 
 .page-title--calc {
-  max-width: 900px;
-  font-size: 48px;
+  max-width: 1000px;
   white-space: nowrap;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 980px) {
   .page-title--calc {
     max-width: 720px;
-    font-size: var(--h1);
     white-space: normal;
   }
 }
@@ -988,7 +986,7 @@ h6 * {
 
 @media (max-height: 780px) and (min-width: 981px) {
   :root {
-    --h1: 64px;
+    --h1: 52px;
     --body-lg: 16px;
     --body: 14px;
     --meta: 12px;
@@ -1017,7 +1015,7 @@ h6 * {
 @media (max-width: 980px) {
   :root {
     --pad: 30px;
-    --h1: 54px;
+    --h1: 48px;
     --body-lg: 17px;
   }
 
@@ -1029,7 +1027,7 @@ h6 * {
 @media (max-width: 560px) {
   :root {
     --pad: 18px;
-    --h1: 40px;
+    --h1: 34px;
     --body-lg: 16px;
     --body: 14px;
   }
